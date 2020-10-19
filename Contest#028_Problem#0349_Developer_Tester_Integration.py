@@ -21,7 +21,7 @@ class Solution:
                 dpT[i] -= preD[i-t+1]
             if i >= d:
                 dpD[i] -= preT[i-d+1]
-            preD.append((preD[-1] + dpD[i]) % MOD)
-            preT.append((preT[-1] + dpT[i]) % MOD)
+            preD.append((preD[-1]+dpD[i]) % MOD)
+            preT.append((preT[-1]+dpT[i]) % MOD)
             
         return [(dpT[q]+dpD[q]) % MOD for q in queries]
