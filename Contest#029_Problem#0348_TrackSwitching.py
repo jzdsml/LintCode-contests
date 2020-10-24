@@ -4,7 +4,7 @@ class Solution:
     @return: return the minimum times to switch the track.
     """
     def trackSwitching(self, obstacles):
-        # f[i]: min number of track switching when ending in track i, where i = 1, 2, 3
+        # f[i]: min number of track switching when ending in track i, where i = 1, 2, 3.
         f = [None, math.inf, 0, math.inf]
         for o in obstacles:
             f = [None, min(f[1], f[2] + 1, f[3] + 1), min(f[1] + 1, f[2], f[3] + 1), min(f[1] + 1, f[2] + 1, f[3])]
