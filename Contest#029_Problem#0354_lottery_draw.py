@@ -8,8 +8,8 @@ class Solution:
     def lotteryDraw(self, b, c, p):
         # Guess with binary search to find answer.
         # Expectation of X = sum of probability(x) * x, where x are all possible values of X.
-        # Probability of good item comes out in the i-th step = (probability of it never comes out in previous i - 1 steps) * (probability of it comes out in the current step)
-        # Probability of it never comes out in previous i - 1 steps = (1 - p_1) * (1 - p_2) * ... * (1 - p_{i-1}), where p_j is the probability of the good item comes out in j-th step.
+        # Probability of the good item comes out in the i-th step = (probability of it never comes out in previous i - 1 steps) * (probability of it comes out in the current step)
+        # Probability of the good item never comes out in previous i - 1 steps = (1 - p_1) * (1 - p_2) * ... * (1 - p_{i-1}), where p_j is the probability of it comes out in j-th step.
         
         def get_p(a):
             probs = [a]
